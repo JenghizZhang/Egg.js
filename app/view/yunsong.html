@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Yunsong</title>
+</head>
+<link rel="stylesheet" href="public/css/default.css">
+<body>
+<div>
+    <%-include("header.html")-%>
+    <h1>这是ejs模版引擎的页面</h1>
+    <ul>
+        <li>id: <%= id %></li>
+        <li>你好，我是<%= name %>,<%= age %>岁</li>
+        <li><%= nowTime %></li>
+        <ul>
+            <% if(counter) { %>
+            <li><%= counter %></li>
+            <% } %>
+
+            <% if(username) { %>
+            <li><%= username %></li>
+            <% } %>
+
+            <% if(pwd) { %>
+            <li><%= pwd %></li>
+            <% } %>
+
+            <% for(var i = 0; i < skills.length; i++) { %>
+            <li><%= skills[i] %></li>
+            <% } %>
+        </ul>
+    </ul>
+
+
+    <div>
+        <button onclick="add()">增加Cookie</button>
+        <button onclick="del()">删除Cookie</button>
+        <button onclick="edit()">修改Cookie</button>
+        <button onclick="show()">查询Cookie</button>
+    </div>
+
+    <script>
+        function add() {
+          fetch("/add",{
+            method:"post",
+            headers: {
+              "Content-Type": "application/json",
+            }
+          })
+        }
+
+        function del() {
+          fetch("/del",{
+            method:"post",
+            headers: {
+              "Content-Type": "application/json",
+            }
+          })
+        }
+
+        function edit() {
+          fetch("/edit",{
+            method:"post",
+            headers: {
+              "Content-Type": "application/json",
+            }
+          })
+        }
+
+        function show() {
+          fetch("/show",{
+            method:"post",
+            headers: {
+              "Content-Type": "application/json",
+            }
+          })
+        }
+    </script>
+</div>
+</body>
+</html>
