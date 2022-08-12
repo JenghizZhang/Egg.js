@@ -107,7 +107,7 @@ class YunsongController extends Controller {
 
   async newContext() {
     const { ctx } = this;
-    const params = ctx.params();
+    const params = ctx.params('a');
     ctx.body = params;
   }
 }
