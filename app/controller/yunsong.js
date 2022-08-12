@@ -110,6 +110,17 @@ class YunsongController extends Controller {
     const params = ctx.params('a');
     ctx.body = params;
   }
+
+  async newRequest() {
+    const { ctx } = this;
+    const token = ctx.request.token;
+    console.log('123', token);
+    ctx.body = {
+      code: 200,
+      token,
+    };
+  }
+
 }
 
 module.exports = YunsongController;

@@ -21,4 +21,5 @@ module.exports = app => {
   router.get('/testGetGirl', controller.home.testGetGirl);
   router.get('/newContext', controller.yunsong.newContext);
   router.post('/newContext', controller.yunsong.newContext);
+  router.post('/newRequest', controller.yunsong.newRequest);
 };
